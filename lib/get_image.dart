@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
+import 'package:flutter/services.dart';
 
 class DiceRoll extends StatefulWidget {
   const DiceRoll({super.key});
@@ -16,6 +17,7 @@ class _DiceRollState extends State<DiceRoll> {
     setState(() {
       currentDiceRoll = randomizer.nextInt(6) + 1;
     });
+    HapticFeedback.mediumImpact();
   }
 
   @override
